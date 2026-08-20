@@ -1,0 +1,4 @@
+# Prompt packs are reviewer configuration — code-owned (TAP
+# req-cicd-ai-review-least-privilege-5). A change to a prompt is a change to every
+# review that pack performs.
+*   @notgeorge
