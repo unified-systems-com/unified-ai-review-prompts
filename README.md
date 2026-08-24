@@ -19,7 +19,7 @@ pack directory is documentation for humans.
 
 | Pack | What it reviews for | License |
 | --- | --- | --- |
-| `security` | Smuggled malicious changes first, hygiene second: cover-story mismatch, weakened controls, CI/build tooling, dependencies, reviewer config, unreviewable content, auth/data paths | Apache-2.0 (repo default) |
+| `security` | Smuggled malicious changes first, hygiene second — v2: phase-ordered review (triage → regression context → blast radius → adversarial pass) with gated verdicts (every finding carries a refutation attempt + settling evidence; findings resting on unseen code cap at medium). Methodology credit: Trail of Bits differential-review / fp-check, written in this project's own words. | Apache-2.0 (repo default) |
 
 Security is the first pack, not the last — code-quality, best-practices, and standards packs
 ride the same mechanism.
