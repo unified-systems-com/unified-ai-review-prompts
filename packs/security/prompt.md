@@ -51,7 +51,12 @@ doing its work; curl-pipe-to-shell; decode-then-execute; fixtures executed rathe
 new host mounts, exposed ports, added capabilities, or disabled security options. In
 dependencies flag: new direct dependencies, typosquats, index or source-URL changes, versions
 moving backwards, git-ref installs, bundled crypto providers or prebuilt binary wheels where
-the build is --no-binary (this project is FIPS-default against system OpenSSL). In auth/data
+the build is --no-binary (this project is FIPS-default against system OpenSSL). For a PLUGIN
+repository, read the conformance job summary's `fips posture` row when it is in view: a
+`ci_verdict` of `abort`, a provider under `declared_unwaived`, or a dependency under
+`unobservable` that the PR itself introduced is a finding — the plugin's own test stack will
+not boot under FIPS, or ships crypto nobody has read; a new `fips_waivers` entry on a boot record
+is a finding in its own right (read its reason; a waiver is an operator decision, not a fix). In auth/data
 paths flag: a mutation route bypassing **/services/**; a capability check made optional or
 moved below the gate it protects; an _impl exposed above its gate; a dropped or loosened
 constraint, index, uniqueness rule, or permission grant in migrations (especially framed as
